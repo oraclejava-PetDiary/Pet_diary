@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oraclejava.spring.service.TwinsDao">
+<select id="getTwinsCnt" resultType="int">
+	select count(*) from lgtwins
+</select>
+<select id="getTwinsList" resultType="map">
+	select*from lgtwins
+</select>
+<select id="getTwinsOne" resultType="com.oraclejava.spring.service.Twins" parameterType="int">
+select sunsu_id as id, sunsu as name, salary 
+from lgtwins
+where sunsu_id=#{id}
+</select>
+<update id="updateTwins"
+parameterType="com.oraclejava.spring.service.Twins">
+update lgtwins set sunsu=#{name}, salary=#{salary} where sunsu_id=#{id}
+</update>
+<insert id="createTwins"
+parameterType="com.oraclejava.spring.service.Twins">
+insert into lgtwins (sunsu_id,sunsu,salary) values (#{id},#{name},#{salary})
+
+
+</insert>
+
+</mapper>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.3.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+    <aop:aspectj-autoproxy />
+
+
+<bean id="triangle" class="com.oraclejava.drawing.model.Triangle">
+<property name="name" value="삼각김밥"/>
+</bean>
+
+<bean id="circle" class="com.oraclejava.drawing.model.Circle">
+<property name="name" value="보름달"/>
+</bean>
+
+<bean id="shapeService" class="com.oraclejava.drawing.service.ShapeService">
+<property name="triangle" ref="triangle"/>
+<property name="circle" ref="circle"/>
+</bean>	
+
+<!-- 1명의 빈 등록하기 -->
+<!-- 이름 프로퍼티 -->
+<bean id="mable1" class="com.oraclejava.drawing.model.Hero">
+<property name="name" value="Doctor Strange"/>
+ 
+<!-- 성별 프로퍼티 -->
+ 
+<property name="gender" value="남자"/>
+ 
+<!-- 첫째등장일시 프로퍼티 -->
+ 
+<property name="firstappearance" value="1962"/>
+</bean>
+
+<!-- 로깅에스펙트 등록 -->
+<bean id="loggingAspect"
+	class="com.oraclejava.drawing.aspect.LoggingAspect"/>
+
+
+</beans>

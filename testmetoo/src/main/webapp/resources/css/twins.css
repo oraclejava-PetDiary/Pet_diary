@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.error_message{
+	padding: 10px;
+	border: 1px solid black;
+	
+}
+
+.success_message{
+	background-color:green;
+	color: white;
+}
+
+.fail_message{
+	background-color: red;
+	color:white;
+}
+
+.error-label{
+	color:#b94a48;
+}
+
+.error-input{
+	border-color:#b94a48;
+	margin-left:5px;
+}
+
+.error-messages{
+	color:#b94a48;
+	padding-left:5px;
+}
