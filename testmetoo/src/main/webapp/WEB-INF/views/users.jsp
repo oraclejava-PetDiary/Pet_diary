@@ -21,7 +21,7 @@
 			<th>passwd</th>
 			<th>birthday</th>
 			<th>marriage</th>
-			<th>age</th>
+			
 		</tr>
 		<c:forEach var="t" items="${users}" varStatus="loop">
 			<tr>
@@ -31,7 +31,7 @@
 				<th>${t.passwd}</th>
 				<th>${t.birthday}</th>
 				<th>${t.marriage}</th>
-				<th>${t.age }</th>
+				
 			</tr>
 		</c:forEach>
 
